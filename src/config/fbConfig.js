@@ -1,3 +1,7 @@
+import firebase from 'firebase/app';
+import 'firebase/firestore';
+import 'firebase/auth';
+
 // Initialize Firebase
 var config = {
     apiKey: "AIzaSyBd433rssNxG-jtC7koNRxiTf38WopChhg",
@@ -7,4 +11,10 @@ var config = {
     storageBucket: "nicolasfig-marioplan.appspot.com",
     messagingSenderId: "910559902687"
   };
+
   firebase.initializeApp(config);
+  firebase.firestore().settings({
+      timestampsInSnapshots: true
+  });
+
+  export default firebase;
